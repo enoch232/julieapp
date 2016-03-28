@@ -1,0 +1,57 @@
+<h1 style = "text-align:center">Notes</h1>
+<div style = "text-align:center;">
+	<% @notes.each do |note| %>
+		<div>
+			<div class = "" style = "float:left;font-family: 'Indie Flower', cursive;background-color: #fff; 
+background-image: 
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;box-shadow: 10px 10px 5px #888888;margin:2em;padding: 1em 0em 0em 0em;width:60em;height:auto">
+				<div class = "row" style = "">
+					<h2><%= note.oftype %></h2>
+				</div>
+
+				<div class = "row" style = "">
+					<div style = "" class = "col-xs-4">
+						<%= image_tag note.image.url(:medium) , class: "" %>
+					</div>
+					<table class ="col-xs-8" style = "font-size:1.6em">
+						<tr>
+							<td class = "pull"><strong>Name:</strong></td>
+							<td><%= note.name %></td>
+						</tr>
+						<tr>
+							<td><strong>Location:</strong></td>
+							<td><%= note.location %></td>
+						</tr>
+						<tr>
+							<td><strong>Account:</strong></td>
+							<td><%= note.account %></td>
+						</tr>
+						<tr>
+							<td><strong>Title:</strong></td>
+							<td><%= note.title %></td>
+						</tr>
+						<tr>
+							<td><strong>Opportunity Size:</strong></td>
+							<td><%= note.opportunity %></td>
+						</tr>
+						<tr>
+							<td><strong>About:</strong></td>
+							<td><%= note.about %></td>
+						</tr>
+						<tr>
+							<td><strong>BD:</strong></td>
+							<td><%= note.bd %></td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+			<div style = "float:left">
+				<%= link_to "delete", note, method: :delete ,data: { confirm: "Are you sure?" } %>
+			</div>
+		</div>
+	<br>
+	<% end %>
+</div>
