@@ -1,23 +1,16 @@
-<%= form_for (@note) , html: { multipart: true } do |f| %>
-<%= f.label :image %><%= f.file_field :image %>
-<br>
-<%= f.label :name %><%= f.text_field :name %> 
-<br>
-<%= f.label :type %><%= f.text_field :oftype %> 
-<br>
-<%= f.label :location %><%= f.text_field :location %> 
-<br>
-<%= f.label :account %><%= f.text_field :account %> 
-<br>
-<%= f.label :title %><%= f.text_field :title %> 
-<br>
-<%= f.label "Opportunity size" %><%= f.text_field :opportunity %>
-<br> 
-<%= f.label :about %>
-<br>
-<%= f.text_area :about %> 
-<br>
-<%= f.label :bd %><%= f.text_field :bd %> 
-<br>
-<%= f.submit %>
-<% end %>
+<div style = "text-align:center;display:inline-block">
+	<%= form_for (@note) , html: { multipart: true } do |f| %>
+	<%= f.label :name %><%= f.text_field :name ,class: "form-control"  %>
+	<%= f.label :image %><%= f.file_field :image ,class: "form-control"  %>
+	<%= f.label :type %><%= f.text_field :oftype ,class: "form-control"  %> 
+	<%= f.label :location %><%= f.text_field :location ,class: "form-control"  %> 
+	<%= f.label :account %><%= f.text_field :account ,class: "form-control"  %> 
+	<%= f.label :title %><%= f.text_field :title ,class: "form-control"  %> 
+	<%= f.label "Opportunity size" %><%= f.text_field :opportunity ,class: "form-control"  %>
+	<%= f.label :about %>
+	<%= f.text_area :about ,class: "form-control"  %> 
+	<%= f.label :bd %><%= f.text_field :bd ,class: "form-control"  %> 
+	<br>
+	<%= f.submit "Create" , class: "btn btn-default" %>
+	<% end %>
+</div>
