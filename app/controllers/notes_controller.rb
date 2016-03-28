@@ -2,6 +2,11 @@ class NotesController < ApplicationController
 	before_action :find_note, only: [ :destroy, :update, :edit]
   def index
   	@notes = Note.all
+    if params[:search]
+      @notes = Note.search(params[:search]).order("created_at DESC")
+    else
+      @notes = Note.all.order('created_at DESC')
+    end
   end
 
   def new
